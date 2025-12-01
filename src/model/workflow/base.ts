@@ -1,4 +1,18 @@
+import type { FileType, InputVariableType } from '@/model/workflow/enums'
+
 export type VariableTypeHint = string | number | boolean | string[] | number[] | boolean[]
+
+export interface InputVariable {
+    type: InputVariableType;
+    name: string;
+    display_name?: string;
+    description?: string;
+    required: boolean;
+    max_length?: number;
+    options?: string[];
+    file_types?: FileType[];
+    file_extensions?: string;
+}
 
 export interface ContextVariable {
     left: string;

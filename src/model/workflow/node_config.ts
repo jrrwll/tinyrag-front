@@ -1,5 +1,15 @@
-import type { PromptRoleType, VariableType } from '@/model/types/enums.ts'
-import type { ContextVariable, ExceptionConfig, ModelParams } from '@/model/types/base.ts'
+import type { PromptRoleType, VariableType } from '@/model/workflow/enums'
+import type { ContextVariable, ExceptionConfig, InputVariable, ModelParams } from '@/model/workflow/base'
+
+export type NodeConfig = StartConfig | EndConfig | LLMConfig;
+
+export interface StartConfig {
+    start_variables: InputVariable[]
+}
+
+export interface EndConfig {
+    end_variables: ContextVariable[]
+}
 
 export interface LLMConfig {
     model_id: number;
